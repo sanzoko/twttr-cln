@@ -23,9 +23,7 @@ jobs:
           cmd: install
       - name: Build and run tests
         env:
-          DATABASE_URL: postgres://postgres:@localhost:5432/test
-          POSTGRES_PASSWORD: postgres
-          REDIS_URL: redis://localhost:6379/0
+          DATABASE_URL: postgres://postgres:@localhost:5432/twttr_cln_test
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
