@@ -9,8 +9,7 @@ jobs:
         ports: ['5432:5432']
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
+          POSTGRES_PASSWORD:
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -29,7 +28,7 @@ jobs:
         env:
           POSTGRES_HOST: localhost
           DATABASE_URL: postgres://postgres:@localhost:5432/twttr_cln_test
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD:
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
