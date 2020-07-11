@@ -25,8 +25,7 @@ If `Ruby 2.6.6` isn't in you list of installed Rubies, use your version manager 
 **Bundle!**
 
 When you have Ruby 2.6.6 and a compatible version of Bundler, you're ready to bundle the dependencies.
-- Run 'bundle install'
-i
+- Run `bundle install`
 
 **Run Rails**
 
