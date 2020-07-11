@@ -8,7 +8,8 @@ jobs:
         image: postgres:11
         ports: ['5432:5432']
         env:
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_USERNAME: postgres
+          POSTGRES_PASSWORD: postgres_pw
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -26,7 +27,8 @@ jobs:
       - name: Build and run tests
         env:
           DATABASE_URL: postgres://postgres:@localhost:5432/twttr_cln_test
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_USERNAME: postgres
+          POSTGRES_PASSWORD: postgres_pw
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
