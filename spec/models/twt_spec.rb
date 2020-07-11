@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Twt, type: :model do
-  it "has content" do
-    twt = Twt.create(body: 'Some sweet content')
-    expect(twt.body).to be_a(String)
+  it "must have content" do
+    twt = Twt.create()
+    expect(twt.valid?).to be(false)
   end
 
 end
